@@ -8,7 +8,9 @@ def init_user():
         input_output.init_owner()
         number = int(input("Select menu item:\n"))
         if number == 1:
-            return common.loat_user()
+            user = common.load_user()
+            input_output.say_hello(user.get_owner())
+            return user
         elif number == 2:
             name = input_output.input_new_owner()
             input_output.say_hello(name)
@@ -29,7 +31,6 @@ def program_cycle():
 def start_budget_init(total, name):
     """create user budget instance"""
     return budget.Budget(total, name)
-
 
 
 def program_cycle_aux(user):
@@ -66,7 +67,7 @@ def menu_decider(number, user):
     elif number == 5:
         input_output.out_owner(user.get_owner())
     elif number == 6:
-        common.save_user(1)
+        common.save_user(user)
 
 
 if __name__ == '__main__':

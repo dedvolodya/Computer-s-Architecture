@@ -2,10 +2,12 @@ def input_sum():
     """ask the user to enter the number"""
     input("Input your sum:\n")
 
+
 def init_owner():
     print("1. Load Profile")
     print("2. Create new Profile")
     print("3. Exit")
+
 
 def input_new_owner():
     """ask the user to enter the name"""
@@ -47,5 +49,5 @@ def init_menu():
     print("3. Get my current budget.")
     print("4. Get my budget statistic.")
     print("5. Who am I?")
-    print("6. Save profile?")
+    print("6. Save profile")
     print("7. Exit.")

@@ -2,3 +2,6 @@
 __pycache_
 venv
 *.pyc
+*.json
+*.yml
+*.pkl
