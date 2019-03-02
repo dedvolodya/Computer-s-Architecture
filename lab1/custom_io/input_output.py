@@ -17,7 +17,7 @@ def say_hello(name):
 def out_statistic(budget_holder):
     """normalize budget dictionary and output it"""
     for key in budget_holder:
-        print("Date : " + str(str(key)) + "  Total sum: " + str(budget_holder[key]))
+        print("Date:" + str(str(key)) + "  Total:" + str(budget_holder[key]))
 
 
 def out_owner(name):
