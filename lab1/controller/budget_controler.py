@@ -1,5 +1,5 @@
-from custom_io import input_output
-from logic import budget
+from lab1.custom_io import input_output
+from lab1.logic import budget
 
 
 def program_cycle():
@@ -50,6 +50,3 @@ def menu_decider(number, user):
     elif number == 5:
         input_output.out_owner(user.get_owner())
 
-
-if __name__ == '__main__':
-    program_cycle()

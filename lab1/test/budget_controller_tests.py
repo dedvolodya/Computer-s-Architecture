@@ -1,6 +1,6 @@
 import unittest
-from controller import budget_controler
-from logic import budget
+from lab1.controller import budget_controler
+from lab1.logic import budget
 
 
 def expected_result_list_init():

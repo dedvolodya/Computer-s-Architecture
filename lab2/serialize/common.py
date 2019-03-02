@@ -1,6 +1,6 @@
-from serialize import pickle_serialize
-from serialize import yaml_serialize
-from serialize import json_serialize
+from lab2.serialize import pickle_serialize
+from lab2.serialize import yaml_serialize
+from lab2.serialize import json_serialize
 serialization_type = 1
 
 

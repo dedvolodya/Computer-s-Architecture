@@ -1,6 +1,6 @@
-from custom_io import input_output
-from logic import budget
-from serialize import common
+from lab2.custom_io import input_output
+from lab2.logic import budget
+from lab2.serialize import common
 
 
 def init_user():
@@ -68,7 +68,3 @@ def menu_decider(number, user):
         input_output.out_owner(user.get_owner())
     elif number == 6:
         common.save_user(user)
-
-
-if __name__ == '__main__':
-    program_cycle()

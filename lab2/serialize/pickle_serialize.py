@@ -1,5 +1,5 @@
 import pickle
-from logic import budget
+from lab2.logic import budget
 
 
 def save(obj, filename):
