@@ -20,7 +20,7 @@ class TestLogicMethods(unittest.TestCase):
     def test_start_init(self):
         init_total = 100
         init_name = 'Jim'
-        user = budget_controler.start_init(init_total, init_name)
+        user = budget_controler.start_budget_init(init_total, init_name)
         self.assertEqual(init_total, user.get_total())
         self.assertEqual(init_name, user.get_owner())
 
