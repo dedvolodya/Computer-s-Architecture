@@ -50,3 +50,6 @@ def menu_decider(number, user):
     elif number == 5:
         input_output.out_owner(user.get_owner())
 
+
+if __name__ == '__main__':
+    program_cycle()
