@@ -1,6 +1,7 @@
 from custom_io import input_output
 from logic import budget
 from serialize import common
+from configs import config_reader
 
 
 def init_user():
@@ -8,9 +9,13 @@ def init_user():
         input_output.init_owner()
         number = int(input("Select menu item:\n"))
         if number == 1:
-            user = common.load_user()
-            input_output.say_hello(user.get_owner())
-            return user
+            try:
+                serializator = common.Serializator(config_reader.ConfigReader())
+                user = serializator.load_user()
+                input_output.say_hello(user.get_owner())
+                return user
+            except FileNotFoundError:
+                print("NO PROFILE FOUND")
         elif number == 2:
             name = input_output.input_new_owner()
             input_output.say_hello(name)
@@ -67,7 +72,8 @@ def menu_decider(number, user):
     elif number == 5:
         input_output.out_owner(user.get_owner())
     elif number == 6:
-        common.save_user(user)
+        serializator = common.Serializator(config_reader.ConfigReader())
+        serializator.save_user(user)
 
 
 if __name__ == '__main__':

@@ -11,7 +11,7 @@ def is_number_correct(total):
 class Budget:
     budget_holder = {}
 
-    def __init__(self, total, owner, budget_holder = None):
+    def __init__(self, total, owner, budget_holder=None):
         if not(is_number_correct(total)):
             raise ValueError("Incorrect total value!")
         self.total = int(total)
