@@ -68,3 +68,7 @@ def menu_decider(number, user):
         input_output.out_owner(user.get_owner())
     elif number == 6:
         common.save_user(user)
+
+
+if __name__ == '__main__':
+    program_cycle()

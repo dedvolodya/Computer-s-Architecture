@@ -8,7 +8,8 @@ def init_user():
         input_output.init_owner()
         number = int(input("Select menu item:\n"))
         if number == 1:
-            user = common.load_user()
+            name = input_output.input_new_owner()
+            user = common.load_user(name)
             input_output.say_hello(user.get_owner())
             return user
         elif number == 2:
@@ -39,8 +40,8 @@ def program_cycle_aux(user):
         input_output.init_menu()
         number = int(input("Select menu item:\n"))
         if is_menu_item_correct(number):
-            menu_decider(number, user)
-        elif number == 7:
+            menu_decider(int(number), user)
+        elif int(number) == 7:
             break
         else:
             print("Try once more!")
@@ -68,3 +69,7 @@ def menu_decider(number, user):
         input_output.out_owner(user.get_owner())
     elif number == 6:
         common.save_user(user)
+
+
+if __name__ == '__main__':
+    program_cycle()

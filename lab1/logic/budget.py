@@ -39,9 +39,17 @@ class Budget:
         """get the total"""
         return self.total
 
+    def set_total(self, total):
+        """set the total"""
+        self.total = total
+
     def get_owner(self):
         """"get the owner"""
         return self.owner
+
+    def set_owner(self, name):
+        """set the owner"""
+        self.owner = name
 
     def get_statistic(self):
         """"get statistic dictionary"""

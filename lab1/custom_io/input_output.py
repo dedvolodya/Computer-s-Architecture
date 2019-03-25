@@ -55,4 +55,5 @@ def init_menu():
     print("3. Get my current budget.")
     print("4. Get my budget statistic.")
     print("5. Who am I?")
-    print("6. Exit.")
+    print("6. Dump data.")
+    print("7. Exit.")
