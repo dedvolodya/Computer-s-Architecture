@@ -1,19 +1,36 @@
-from lab1.custom_io import input_output
-from lab1.logic import budget
+from custom_io import input_output
+from logic import budget
+from serialization import common
+
+
+def init_user():
+    while True:
+        input_output.init_owner()
+        number = int(input("Select menu item:\n"))
+        if number == 1:
+            user = common.load_user()
+            input_output.say_hello(user.get_owner())
+            return user
+        elif number == 2:
+            name = input_output.input_new_owner()
+            input_output.say_hello(name)
+            return start_budget_init(input_output.start_init(), name)
+        elif number == 3:
+            return None
+        else:
+            print("Try once more!")
 
 
 def program_cycle():
     """init program cycle"""
-    name = input_output.input_owner()
-    input_output.say_hello(name)
-    user = start_init(input_output.start_init(), name)
-    program_cycle_aux(user)
+    user = init_user()
+    if user is not None:
+        program_cycle_aux(user)
 
 
-def start_init(total, name):
+def start_budget_init(total, name):
     """create user budget instance"""
-    user = budget.Budget(total, name)
-    return user
+    return budget.Budget(total, name)
 
 
 def program_cycle_aux(user):
@@ -23,7 +40,7 @@ def program_cycle_aux(user):
         number = int(input("Select menu item:\n"))
         if is_menu_item_correct(number):
             menu_decider(number, user)
-        elif number == 6:
+        elif number == 7:
             break
         else:
             print("Try once more!")
@@ -31,7 +48,7 @@ def program_cycle_aux(user):
 
 def is_menu_item_correct(number):
     """check number"""
-    if 0 < number < 6:
+    if 0 < number < 7:
         return True
     else:
         return None
@@ -49,4 +66,5 @@ def menu_decider(number, user):
         input_output.out_statistic(user.get_statistic())
     elif number == 5:
         input_output.out_owner(user.get_owner())
-
+    elif number == 6:
+        common.save_user(user)

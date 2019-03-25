@@ -11,12 +11,15 @@ def is_number_correct(total):
 class Budget:
     budget_holder = {}
 
-    def __init__(self, total, owner):
-        if not(is_number_correct(total)):
+    def __init__(self, total, owner, budget_holder=None):
+        if not (is_number_correct(total)):
             raise ValueError("Incorrect total value!")
         self.total = int(total)
         self.owner = owner
-        self.budget_holder[datetime.datetime.now()] = total
+        if budget_holder is None:
+            self.budget_holder[datetime.datetime.now()] = total
+        else:
+            self.budget_holder = budget_holder
 
     def dec_total(self, dif):
         """reduce the total amount to a certain size"""
@@ -27,7 +30,7 @@ class Budget:
 
     def inc_total(self, dif):
         """increase the total amount to a certain size"""
-        if not(is_number_correct(dif)):
+        if not (is_number_correct(dif)):
             raise ValueError("Incorrect total value!")
         self.total += int(dif)
         self.budget_holder[datetime.datetime.now()] = self.total

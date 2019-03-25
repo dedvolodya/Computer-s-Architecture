@@ -1,6 +1,6 @@
 import unittest
-from lab1.controller import budget_controler
-from lab1.logic import budget
+from controller import budget_controler
+from logic import budget
 
 
 def expected_result_list_init():
@@ -16,13 +16,6 @@ def simple_budget_operations(init_total):
 
 
 class TestLogicMethods(unittest.TestCase):
-
-    def test_start_init(self):
-        init_total = 100
-        init_name = 'Jim'
-        user = budget_controler.start_init(init_total, init_name)
-        self.assertEqual(init_total, user.get_total())
-        self.assertEqual(init_name, user.get_owner())
 
     def test_menu_item_correct(self):
         self.assertEqual(None, budget_controler.is_menu_item_correct(0))
