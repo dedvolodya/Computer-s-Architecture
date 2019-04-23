@@ -1,13 +1,11 @@
 import unittest
 from controller import budget_controler
-from logic.budget import Budget
 from serialization import common
-import time
 import os
 
 
 class TestSerializationMethods(unittest.TestCase):
-    user: Budget = budget_controler.start_budget_init(100, 'Vasia')
+    user = budget_controler.start_budget_init(100, 'Vasia')
 
     def setUp(self):
         common.save_user(self.user)
